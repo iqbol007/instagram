@@ -29,20 +29,15 @@ let dialogButtonsStyles = {
   alingSelf: "flex-end"
 };
 
-export default function VievAllComments({post, onClose, isOpen, dispatch }) {
-  const [postDescription, setPostDescription] = useState("");
-  const [postLocation, setpostLocation] = useState("");
-  const handleSubmit = () => {
-    dispatch({ type: POST_ADD, postDescription, postLocation });
-  };
+export default function VievAllComments({post, onClose, isOpen}) {
   let dialog = (
-    <div style={dialogStyles} onSubmit={handleSubmit}>
+    <div style={dialogStyles}>
       <button style={dialogButtonsStyles} onClick={onClose}>
         x
       </button>
       <div className="viev-all-comments">
       
-         {post.comments.map(o => <Comment key={o.id} comment={o} dispatch={dispatch} />)}
+         {post.comments.map(o => <Comment key={o.id} comment={o}  />)}
       </div>
      
     </div>
