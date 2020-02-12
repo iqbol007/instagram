@@ -1,3 +1,7 @@
+* {
+  outline: none;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +14,203 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.main {
+  margin-left: 30%;
+}
+
+.post {
+  padding: 10px;
+
+  width: 200px;
+}
+
+.ava-img {
+  background-color: blue;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-size: cover;
+}
+.size-xl{
+  font-size: x-large;
+  color: rgb(0, 0, 0);
+}
+.author-name {
+  padding-left: 10px;
+  padding-bottom: 10px;
+  font-weight: 700;
+  font-size: medium;
+}
+.content {
+  width: 300px;
+  height: 300px;
+  font-size: small;
+  margin-left: -150px;
+}
+
+.img-content {
+  width: 400px;
+  height: 400px;
+  padding-top: 5px;
+  margin-left: 20px;
+  background-size: inherit;
+}
+
+.social-buttons {
+  margin-left: 30px;
+  padding-top: 15px;
+  width: 380px;
+}
+
+.social-buttons i {
+ 
+  margin-right: 10px;
+}
+
+.social-buttons i:last-child {
+  margin-right: 0;
+}
+
+.fl {
+  float: right;
+}
+
+.likes {
+  font-size: x-small;
+  font-weight: 700;
+  background-image: url('/public/img-content/22.jpg');
+}
+
+.author {
+  margin-left: -120px;
+  display: flex;
+  width: 450px;
+}
+
+.text-content {
+  margin-top: 5px;
+  background-size: contain;
+  font-size: small;
+}
+
+.comment-text {
+  font-size: x-small;
+
+}
+
+.comment-author {
+  font-size: small;
+  font-weight: 600;
+}
+
+.description {
+  margin-left: 80px;
+  font-weight: 600;
+  font-size: normal;
+}
+
+.input-comment {
+  padding-right: 5px;
+  border-style: none;
+  width: 600px;
+  margin-top: 5px;
+  font-size: 0.7em;
+}
+
+.gray {
+  color: gray;
+}
+
+.open {
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
+
+.fr {
+  float: left;
+}
+
+.header {
+  width: 400px;
+  margin-left: -120px;
+  padding-bottom:  5px;
+  border-bottom: 1px solid rgb(172, 172, 172);
+}
+
+.footer-buttons {
+  border-top: 1px solid  rgb(172, 172, 172);
+  position: absolute;
+  width: 400px;
+  bottom: 0;
+background-color: white;
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+}
+.footer-buttons i{
+padding-top: 5px;
+}
+.head-icons {
+  padding-top: 5px;
+}
+
+.pr {
+  padding-right: 5px;
+}
+
+.pl {
+  padding-left: 5px;
+}
+
+.footer {
+  margin-left: -370px;
+  margin-top: 140px;
+}
+
+.comment-add-form {
+  margin-left: -100px;
+  display: flex;
+}
+.comment{
+  border-top: 1px solid rgb(228, 227, 227);
+  border-bottom: 1px solid  rgb(228, 227, 227);
+  margin-left: -130px;
+  width: 385px;
+  padding-left: 15px;
+  text-align: left;
+}
+.comment-info{
+   margin-left: -10px;
+  font-size: x-small;
+  color: rgb(141, 140, 140);
+  
+}
+.comment-info span{
+ padding: 10px;
+}
+.instagramm-logo{
+  font-family: 'Dancing Script', cursive;
+  font-size: 2em;
+}
+.input-descritiop{
+width: 300px;
+}
+.buttond{
+   margin-left: 250px;
+   
+}
+ .viev-all-comments{
+   margin-left: 160px;
+ }
+ .remover{
+   padding-left: 262px;
+   margin-bottom: -40px;
+ }
+.likedClass{
+  color: brown;
 }
