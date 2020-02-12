@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { POST_ADD } from "../../actions/actionTypes";
+import React from "react";
 import Comment from "../Comment/Comment";
 
 let dialogStyles = {
