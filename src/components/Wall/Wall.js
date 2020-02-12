@@ -1,7 +1,6 @@
 import React, { useState, useReducer } from "react";
 import Post from "../Post/Post";
 import PostAddForm from "../PostAddForm/PostAddForm";
-
 import {
   COMMENT_ADD,
   COMMENT_LIKE,
@@ -39,16 +38,16 @@ const initialPosts = [
     imgUrl: "https://i.pravatar.cc/200",
     likes: 4,
     isLikedByMe: false,
-    textContent: "First Post",
+    textContent: "good morning",
     imgContentUrl: "https://i.pravatar.cc/530",
     isLikedByme: false,
     comments: [
       {
         id: nextCommentId++,
-        author: "donaldtrump",
+        author: "danny",
         content: "Nice Post",
         likes: 0,
-        comLikedByMe: false
+        comLikedByme: false
       }
     ]
   },
@@ -64,10 +63,10 @@ const initialPosts = [
     comments: [
       {
         id: nextCommentId++,
-        author: "jonnydepp",
+        author: "john",
         content: "Cool man!!!",
         likes: 55,
-        comLikedByMe: false
+        comLikedByme: false
       }
     ]
   }
@@ -76,8 +75,14 @@ function likeComment(comments, id) {
   return comments.map(c => {
     if (c.id !== id) {
       return c;
+    } else {
+      if (c.comLikedByme) {
+        c.comLikedByme = !c.comLikedByme;
+        return { ...c, likes: c.likes - 1 };
+      }
+      c.comLikedByme = !c.comLikedByme;
+      return { ...c, likes: c.likes + 1 };
     }
-    return { ...c, likes: c.likes + 1 };
   });
 }
 function removeComment(comments, id) {
@@ -97,17 +102,37 @@ function addPost(posts, authorImageUrl, postContent, postDescription) {
       id: nextPostId++,
       author: "user_01",
       imgUrl: authorImageUrl,
-      geo: "",
       likes: 0,
       textContent: postDescription,
       imgContentUrl: postContent,
       comments: [],
-      isLikedByMe: false
+      isLikedByme: false
     }
   ];
 }
 function removePost(posts, postId) {
   return posts.filter(o => o.id !== postId);
+}
+function postLike(posts, postId) {
+  return posts.map(p => {
+    if (p.id !== postId) {
+      return p;
+    } else {
+      if (p.isLikedByme) {
+        p.isLikedByme = !p.isLikedByme;
+        return { ...p, likes: p.likes - 1 };
+      } else {
+        p.isLikedByme = !p.isLikedByme;
+        return { ...p, likes: p.likes + 1 };
+      }
+    }
+  });
+}
+function commentAdd(posts, postId, comment) {
+  return posts.map(p => ({
+    ...p,
+    comments: p.id !== postId ? p.comments : addComment(p.comments, comment)
+  }));
 }
 export default function Wall() {
   const [posts, dispatch] = useReducer(reducer, initialPosts);
@@ -117,20 +142,11 @@ export default function Wall() {
     switch (action.type) {
       case POST_LIKE: {
         const { postId } = action;
-        return posts.map(p => {
-          if (p.id !== postId) {
-            return p;
-          }
-          return { ...p, likes: p.likes + 1 };
-        });
+        return postLike(posts, postId);
       }
       case COMMENT_ADD: {
         const { postId, comment } = action;
-        return posts.map(p => ({
-          ...p,
-          comments:
-            p.id !== postId ? p.comments : addComment(p.comments, comment)
-        }));
+        return commentAdd(posts, postId, comment);
       }
       case COMMENT_LIKE: {
         const { commentId } = action;
@@ -166,9 +182,9 @@ export default function Wall() {
           <span className="instagramm-logo">Instagramm</span>
           <i className="fa fa-paper-plane fl head-icons pr size-xl"></i>
         </div>
-        {posts.map(o => (
-          <Post key={o.id} post={o} dispatch={dispatch} />
-        )).reverse()}
+        {posts
+          .map(o => <Post key={o.id} post={o} dispatch={dispatch} />)
+          .reverse()}
         <PostAddForm
           isOpen={isOpen}
           onClose={e => setisOpen(false)}

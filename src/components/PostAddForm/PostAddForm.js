@@ -3,11 +3,12 @@ import { POST_ADD } from "../../actions/actionTypes";
 
 let dialogStyles = {
   width: "500px",
+  height: "200px",
   maxWidth: "100%",
-  margin: "0 auto",
+  marginTop: "-50px",
   position: "fixed",
-  left: "50%",
-  top: "50%",
+  left: "45%",
+  top: "5%",
   transform: "translate(-50%,50%)",
   zIndex: "999",
   backgroundColor: "#eee",
@@ -34,6 +35,10 @@ export default function PostAddForm({ onClose, isOpen, dispatch }) {
   const [postDescription, setpostDescription] = useState("");
   const handleSubmit = () => {
     dispatch({ type: POST_ADD, authorImageUrl, postContent, postDescription });
+    onClose();
+    setauthorImageUrl("");
+    setpostContent("");
+    setpostDescription("");
   };
   const handleChangeAvatar = evt => {
     const value = evt.target.value;
@@ -48,39 +53,41 @@ export default function PostAddForm({ onClose, isOpen, dispatch }) {
     setpostDescription(value);
   };
   let dialog = (
-    <div style={dialogStyles} onSubmit={handleSubmit}>
+    <div style={dialogStyles}>
       <button style={dialogButtonsStyles} onClick={onClose}>
         x
       </button>
-
-      <div className="inp-desc">
-        <label htmlFor="input-descritiop">Input post author image url: </label>
+      <h1>Add post form</h1>
+      <div>
+        <label className="lab" htmlFor="input-ava">
+          Input post author image url:{" "}
+        </label>
         <input
           onChange={handleChangeAvatar}
-          id="input-descritiop"
-          className="input-descritiop"
-          placeholder="description..."
+          id="input-ava"
+          className="input-avaurl"
+          placeholder="URL..."
           autocomplete="off"
         ></input>
       </div>
 
       <div className="inp-pos">
-        <label htmlFor="input-position">Input post content url: </label>
+        <label htmlFor="input-cont">Input post content url: </label>
         <input
           onChange={handleChangeContent}
-          id="input-position"
-          className="input-position"
-          placeholder="position..."
+          id="input-cont"
+          className="input-conturl"
+          placeholder="URL..."
           autocomplete="off"
         ></input>
       </div>
 
       <div className="inp-pos">
-        <label htmlFor="input-position">Input post description: </label>
+        <label htmlFor="input-desc">Input post description: </label>
         <input
           onChange={handleChangeDescription}
-          id="input-position"
-          className="input-position"
+          id="input-desc"
+          className="input-description"
           placeholder="description..."
           autocomplete="off"
         ></input>

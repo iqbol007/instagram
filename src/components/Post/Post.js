@@ -34,9 +34,8 @@ export default function Post({ post, dispatch }) {
     <article className="post">
       <div className="author">
         <div style={avaStyle}></div>
-        <span className="author-name">
-          {post.author}
-        </span><i className="fa fa-trash remover" onClick={handleRemowePost}></i>
+        <span className="author-name">{post.author}</span>
+        <i className="fa fa-trash remover" onClick={handleRemowePost}></i>
         <div></div>
       </div>
       <div className="text-content">{post.geo}</div>
@@ -45,8 +44,19 @@ export default function Post({ post, dispatch }) {
           <div style={contentImgStyle}></div>
         </div>
         <div className="social-buttons">
-          <i className="fa fa-heart fr fa-lg" onClick={handleLike}></i>
-          <i className="fa fa-comment fr fa-lg" onClick={()=>setisOpen(true)}></i>
+          {post.isLikedByme ? (
+            <i className="fa fa-heart fr fa-lg likedClass" onClick={handleLike}>
+              like
+            </i>
+          ) : (
+            <i className="fa fa-heart fr fa-lg" onClick={handleLike}>
+              like
+            </i>
+          )}
+          <i
+            className="fa fa-comment fr fa-lg"
+            onClick={() => setisOpen(true)}
+          ></i>
           <i className="fa fa-paper-plane fr fa-lg"></i>
           <i className="fa fa-bookmark fl fa-lg"></i>
         </div>
@@ -62,7 +72,7 @@ export default function Post({ post, dispatch }) {
       <VievAllComments
         post={post}
         isOpen={isOpen}
-        onClose={()=>setisOpen(false)}
+        onClose={() => setisOpen(false)}
         dispatch={dispatch}
       />
     </article>
