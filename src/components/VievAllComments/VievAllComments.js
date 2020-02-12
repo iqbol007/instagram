@@ -35,14 +35,6 @@ export default function VievAllComments({post, onClose, isOpen, dispatch }) {
   const handleSubmit = () => {
     dispatch({ type: POST_ADD, postDescription, postLocation });
   };
-  const handleChangeDescript = evt => {
-    const value = evt.target.value;
-    setPostDescription(value);
-  };
-  const handleChangePosition = evt => {
-    const value = evt.target.value;
-    setpostLocation(value);
-  };
   let dialog = (
     <div style={dialogStyles} onSubmit={handleSubmit}>
       <button style={dialogButtonsStyles} onClick={onClose}>
