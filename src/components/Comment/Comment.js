@@ -17,11 +17,15 @@ export default function Comment({ comment, dispatch }) {
       <div className="comment-author">
         {comment.author}
         <span className="comment-text col">{comment.content}</span>
-        {comment.comLikedByme ? (
-          <i className="fa fa-heart fa-sm likedClass col" onClick={handleLike}></i>
-        ) : (
-          <i className="fa fa-heart fa-sm col" onClick={handleLike}></i>
-        )}
+
+        <i
+          className={
+            comment.comLikedByme
+              ? "fa fa-heart fa-sm col likedClass"
+              : "fa fa-heart fa-sm col"
+          }
+          onClick={handleLike}
+        ></i>
       </div>
       <div className="comment-info">
         <span className="comment-aded-time">13мин.</span>

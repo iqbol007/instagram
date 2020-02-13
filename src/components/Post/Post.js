@@ -44,14 +44,15 @@ export default function Post({ post, dispatch }) {
           <div style={contentImgStyle}></div>
         </div>
         <div className="social-buttons">
-          {post.isLikedByme ? (
-            <i
-              className="fa fa-heart fr fa-lg likedClass"
-              onClick={handleLike}
-            ></i>
-          ) : (
-            <i className="fa fa-heart fr fa-lg" onClick={handleLike}></i>
-          )}
+          <i
+            className={
+              post.isLikedByme
+                ? "fa fa-heart fr fa-lg likedClass"
+                : "fa fa-heart fr fa-lg"
+            }
+            onClick={handleLike}
+          ></i>
+
           <i
             className="fa fa-comment fr fa-lg"
             onClick={() => setisOpen(true)}

@@ -187,12 +187,12 @@ export default function Wall() {
           .reverse()}
         <PostAddForm
           isOpen={isOpen}
-          onClose={() => setisOpen(false)}
+          onClose={()=>setisOpen(false)}
           dispatch={dispatch}
         />
       </div>
       <div className="space"></div>
-      <Footer onAddButtonClick={e => setisOpen(true)} />
+      <Footer onAddButtonClick={()=>setisOpen(true)} />
     </>
   );
 }
