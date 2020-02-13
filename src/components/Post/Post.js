@@ -45,13 +45,12 @@ export default function Post({ post, dispatch }) {
         </div>
         <div className="social-buttons">
           {post.isLikedByme ? (
-            <i className="fa fa-heart fr fa-lg likedClass" onClick={handleLike}>
-              like
-            </i>
+            <i
+              className="fa fa-heart fr fa-lg likedClass"
+              onClick={handleLike}
+            ></i>
           ) : (
-            <i className="fa fa-heart fr fa-lg" onClick={handleLike}>
-              like
-            </i>
+            <i className="fa fa-heart fr fa-lg" onClick={handleLike}></i>
           )}
           <i
             className="fa fa-comment fr fa-lg"

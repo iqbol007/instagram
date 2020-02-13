@@ -191,6 +191,7 @@ export default function Wall() {
           dispatch={dispatch}
         />
       </div>
+      <div className="space"></div>
       <Footer onAddButtonClick={e => setisOpen(true)} />
     </>
   );

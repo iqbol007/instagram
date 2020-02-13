@@ -33,12 +33,24 @@ export default function PostAddForm({ onClose, isOpen, dispatch }) {
   const [authorImageUrl, setauthorImageUrl] = useState("");
   const [postContent, setpostContent] = useState("");
   const [postDescription, setpostDescription] = useState("");
+  let errorInputAva = false;
+  let errorInputConImg = false;
   const handleSubmit = () => {
+    if (authorImageUrl === "") {
+      errorInputAva = true;
+      return;
+    }
+    if (postContent === "") {
+      errorInputConImg = true;
+      return;
+    }
     dispatch({ type: POST_ADD, authorImageUrl, postContent, postDescription });
     onClose();
     setauthorImageUrl("");
     setpostContent("");
     setpostDescription("");
+    errorInputConImg=true;
+    errorInputAva=true;
   };
   const handleChangeAvatar = evt => {
     const value = evt.target.value;
@@ -69,9 +81,10 @@ export default function PostAddForm({ onClose, isOpen, dispatch }) {
           placeholder="URL..."
           autocomplete="off"
         ></input>
+        {errorInputAva && <span>please input url</span>}
       </div>
 
-      <div className="inp-pos">
+      <div>
         <label htmlFor="input-cont">Input post content url: </label>
         <input
           onChange={handleChangeContent}
@@ -80,9 +93,10 @@ export default function PostAddForm({ onClose, isOpen, dispatch }) {
           placeholder="URL..."
           autocomplete="off"
         ></input>
+        {errorInputConImg && <span>please input url</span>}
       </div>
 
-      <div className="inp-pos">
+      <div>
         <label htmlFor="input-desc">Input post description: </label>
         <input
           onChange={handleChangeDescription}

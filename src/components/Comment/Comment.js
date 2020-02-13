@@ -12,19 +12,15 @@ export default function Comment({ comment, dispatch }) {
   return (
     <article className="comment">
       <div>
-        <i className="fa fa-trash fl" onClick={handleRemove}></i>
+        <i className="fa fa-trash com-rem" onClick={handleRemove}></i>
       </div>
       <div className="comment-author">
         {comment.author}
-        <span className="comment-text">{comment.content}</span>
+        <span className="comment-text col">{comment.content}</span>
         {comment.comLikedByme ? (
-          <i className="fa fa-heart fa-sm likedClass" onClick={handleLike}>
-            like
-          </i>
+          <i className="fa fa-heart fa-sm likedClass col" onClick={handleLike}></i>
         ) : (
-          <i className="fa fa-heart fa-sm" onClick={handleLike}>
-            like
-          </i>
+          <i className="fa fa-heart fa-sm col" onClick={handleLike}></i>
         )}
       </div>
       <div className="comment-info">

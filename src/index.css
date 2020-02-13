@@ -224,9 +224,11 @@ code {
 .viev-all-comments {
   margin-left: 160px;
 }
-
+.space{
+  height: 20px;
+}
 .remover {
-  padding-left: 262px;
+  padding-left: 257px;
   margin-bottom: -40px;
 }
 
@@ -236,4 +238,12 @@ code {
  
 .lab{
   margin-left: -40px;
+}
+.com-rem{
+  float: right;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+.col{
+padding-left: 10px;
 }
