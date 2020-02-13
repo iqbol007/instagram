@@ -16,7 +16,7 @@ let nextCommentId = 1;
 const initialPosts = [
   {
     id: nextPostId++,
-    author: "cristiano",
+    author: "instagram",
     imgUrl: "https://i.pravatar.cc/200",
     likes: 3,
     textContent: "Second Post",
@@ -53,7 +53,7 @@ const initialPosts = [
   },
   {
     id: nextPostId++,
-    author: "eminem",
+    author: "cristiano",
     imgUrl: "https://i.pravatar.cc/200",
     likes: 215,
     textContent: "third Post",
