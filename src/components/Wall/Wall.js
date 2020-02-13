@@ -187,7 +187,7 @@ export default function Wall() {
           .reverse()}
         <PostAddForm
           isOpen={isOpen}
-          onClose={e => setisOpen(false)}
+          onClose={() => setisOpen(false)}
           dispatch={dispatch}
         />
       </div>

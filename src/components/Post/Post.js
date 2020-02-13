@@ -69,7 +69,7 @@ export default function Post({ post, dispatch }) {
       <CommentAddForm postId={post.id} dispatch={dispatch} />
       <Comments comments={post.comments} dispatch={dispatch} />
       <VievAllComments
-        post={post}
+        comments={post.comments}
         isOpen={isOpen}
         onClose={() => setisOpen(false)}
         dispatch={dispatch}

@@ -210,12 +210,15 @@ code {
 .input-avaurl {
   width: 200px;
 }
+
 .input-conturl {
   width: 200px;
 }
-.input-description{
+
+.input-description {
   width: 200px;
 }
+
 .buttond {
   margin-left: 250px;
 
@@ -224,9 +227,11 @@ code {
 .viev-all-comments {
   margin-left: 160px;
 }
-.space{
+
+.space {
   height: 20px;
 }
+
 .remover {
   padding-left: 257px;
   margin-bottom: -40px;
@@ -235,15 +240,46 @@ code {
 .likedClass {
   color: rgb(207, 0, 0);
 }
- 
-.lab{
+
+.lab {
   margin-left: -40px;
 }
-.com-rem{
+
+.com-rem {
   float: right;
   margin-top: 5px;
   margin-right: 5px;
 }
-.col{
-padding-left: 10px;
+
+.col {
+  padding-left: 10px;
+}
+
+.dialogStyles {
+  width: 500px;
+  height: 200px;
+  min-width: 10%;
+  margin-top: -50px;
+  position: fixed;
+  left: 45%;
+  top: 5%;
+  transform: translate(-50%, 50%);
+  z-index: 999;
+  background-color: #eee;
+  padding: 10px 20px 40px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dialogButtonsStyles {
+ margin-bottom: 15px;
+ padding: 5px 8px;
+  border-radius: 50%;
+  border:none;
+  width: 30px;
+  height: 30px;
+  font-weight: bold;
+  align-self: flex-end;
+
 }

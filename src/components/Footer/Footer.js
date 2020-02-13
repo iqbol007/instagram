@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Footer({onAddButtonClick}) {
+export default function Footer({ onAddButtonClick }) {
   return (
     <div className="footer-buttons fa-xl size-xl">
       <i className="fa fa-home fa-xl size-xl" />
